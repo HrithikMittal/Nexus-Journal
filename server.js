@@ -30,19 +30,30 @@ MongoClient.connect(url, (err, db) => {
   app.use("/api", router);
 
   //MIDDLE WARE-
-  router.use(function(req, res, next) {
+  router.use(function (req, res, next) {
     console.log("FYI...There is some processing currently going down");
     next();
   });
 
   // test route
-  router.get("/", function(req, res) {
+  router.get("/", function (req, res) {
     res.json({
       message: "Welcome !"
     });
   });
 
-  router.route("/trans").post(function(req, res) {
+  router.route("/trans").get(function (req, res) {
+    dbo
+      .collection("journals")
+      .find({})
+      .toArray(function (err, result) {
+        if (err) throw err;
+        res.json(result);
+      });
+  });
+
+
+  router.route("/trans").post(function (req, res) {
     var casht = new Details();
     var ledgera = new Ledger();
     casht.fromname = req.body.fromname;
@@ -66,7 +77,7 @@ MongoClient.connect(url, (err, db) => {
     var value6 = casht.debitamount;
     var setamountintial = parseInt(value5);
     // insertion in the database of jounal
-    dbo.collection("journals").insertOne(casht, function(err, res) {
+    dbo.collection("journals").insertOne(casht, function (err, res) {
       if (err) throw err;
       console.log("1 document inserted");
     });
@@ -77,7 +88,7 @@ MongoClient.connect(url, (err, db) => {
     dbo
       .collection("ledger")
       .find({})
-      .toArray(function(err, result) {
+      .toArray(function (err, result) {
         if (err) throw err;
         var valueto = 0;
 
@@ -111,11 +122,9 @@ MongoClient.connect(url, (err, db) => {
               "gotoledger.tomoney": value5
             };
             dbo.collection("ledger").updateOne(
-              myorg,
-              {
+              myorg, {
                 $push: mynew
-              },
-              {
+              }, {
                 upsert: true
               }
             );
@@ -144,7 +153,7 @@ MongoClient.connect(url, (err, db) => {
           newdebita = 0;
           ledgera.debitamount = newdebita;
 
-          dbo.collection("ledger").insertOne(ledgera, function(err, res) {
+          dbo.collection("ledger").insertOne(ledgera, function (err, res) {
             if (err) throw err;
             console.log("1 document inserted");
           });
