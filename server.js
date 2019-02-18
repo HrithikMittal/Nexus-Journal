@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 3002;
 
 // Connect to DB
-var url = "mongodb://localhost:27017/transaction";
+var url = "mongodb://localhost:27017";
 
 MongoClient.connect(url, (err, db) => {
   const dbo = db.db("trans");
