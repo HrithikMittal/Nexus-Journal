@@ -5,13 +5,19 @@ written in a journal prior to manually posting them to the accounts in the gener
 
 
 <h1>How to Use?</h1>
-<h3>Go to your computer’s shell and type the following command with your SSH or HTTPS URL:
+<h3>Go to your computer’s shell and type the following command with your SSH or HTTPS URL:</h3>
 
 ```
     git clone https://github.com/HrithikMittal/Nexus-Journal.git
 ```
-
-</h3>
+<h3> >Dependicies to be installed </h3>
+```
+    npm install express
+    npm install mongoose
+    npm install body-parser
+    npm install mongodb
+ ```
+    
 
 <h1>Were to Use?</h1>
 
