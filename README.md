@@ -31,6 +31,7 @@ Dependicies to be installed
 <h1>Were to Use?</h1>
 <ul>
     <li>For Creating Tracnsaction in Accounting</li>
+    <li>For making Ledger in Accounting</li>
     <li>Record daily events for later reference</li>
     <li>Take notes on things you read, hear and watch</li>
 </ul>
