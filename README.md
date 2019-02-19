@@ -11,11 +11,12 @@ written in a journal prior to manually posting them to the accounts in the gener
     git clone https://github.com/HrithikMittal/Nexus-Journal.git
 ```
 <h3> >Dependicies to be installed </h3>
+
 ```
-    npm install express
-    npm install mongoose
-    npm install body-parser
-    npm install mongodb
+   npm install express
+   npm install mongoose
+   npm install body-parser
+   npm install mongodb
  ```
     
 
