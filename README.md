@@ -10,7 +10,9 @@ written in a journal prior to manually posting them to the accounts in the gener
 ```
     git clone https://github.com/HrithikMittal/Nexus-Journal.git
 ```
-<h3> >Dependicies to be installed </h3>
+<h3>
+Dependicies to be installed 
+</h3>
 
 ```
    npm install express
@@ -18,10 +20,20 @@ written in a journal prior to manually posting them to the accounts in the gener
    npm install body-parser
    npm install mongodb
  ```
-    
+<h3>
+    For Database 
+</h3>
+
+```
+    connect to mongodb://localhost:27017/
+```
 
 <h1>Were to Use?</h1>
-
+<ul>
+    <li>For Creating Tracnsaction in Accounting</li>
+    <li>Record daily events for later reference</li>
+    <li>Take notes on things you read, hear and watch</li>
+</ul>
 
 
 
